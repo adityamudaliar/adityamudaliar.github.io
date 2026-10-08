@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aditya Mudaliar · Design leader &amp; digital product designer</title>
+<meta name="description" content="Aditya Mudaliar is a design leader in Mumbai with 20+ years across brand, broadcast, interactive and enterprise product design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1EF; --surface:#F7F8F7; --ink:#18211E; --muted:#5D6965;
+  --rule:#C8D0CC; --accent:#35588A; --accent-soft:#DCE4EE;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#131917; --surface:#1A2120; --ink:#E2E7E5; --muted:#97A39F;
+    --rule:#2E3835; --accent:#93AEDA; --accent-soft:#22304A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131917; --surface:#1A2120; --ink:#E2E7E5; --muted:#97A39F;
+  --rule:#2E3835; --accent:#93AEDA; --accent-soft:#22304A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--accent);color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+img,svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--surface);padding:8px 12px}
+
+/* header */
+header.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-size:15px}
+header.top .name{font-weight:600;text-decoration:none}
+header.top nav{display:flex;gap:24px;align-items:center}
+header.top nav a{text-decoration:none;color:var(--muted)}
+header.top nav a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--rule);color:var(--muted);font:inherit;font-size:13px;padding:4px 10px;border-radius:999px;cursor:pointer}
+.theme:hover{color:var(--ink);border-color:var(--muted)}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.hero h1{font-weight:300;font-size:clamp(34px,5.4vw,62px);line-height:1.08;letter-spacing:-.02em;margin:0;max-width:17ch}
+.hero p.lede{max-width:60ch;color:var(--muted);font-size:19px;margin:28px 0 0}
+.hero p.lede + p.lede{font-size:17px;margin-top:16px}
+
+/* career measure: the one bold element */
+.measure{margin:72px 0 24px}
+.measure .ends{display:flex;justify-content:space-between;font:500 13px var(--mono);color:var(--muted);margin-bottom:8px}
+.track{position:relative;display:flex;height:72px;border-left:1px solid var(--ink);border-right:1px solid var(--ink)}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--ink)}
+.seg{position:relative;flex:var(--y) 1 0;border-right:1px dashed var(--rule)}
+.seg:last-child{border-right:0}
+.seg span{position:absolute;left:8px;font-size:13px;line-height:1.25;color:var(--muted);max-width:calc(100% - 12px)}
+.seg:nth-child(odd) span{top:2px}.seg:nth-child(even) span{bottom:2px}
+.seg.now span{color:var(--accent);font-weight:500}
+.seg.now::after{content:"";position:absolute;right:-1px;top:calc(50% - 4px);width:8px;height:8px;border-radius:50%;background:var(--accent);transform:translateX(50%)}
+.measure figcaption{font-size:14px;color:var(--muted);margin-top:16px}
+@media (max-width:760px){
+  .track{flex-direction:column;height:auto;border:0;border-left:1px solid var(--ink);padding-left:0}
+  .track::before{display:none}
+  .seg{flex:none;border-right:0;border-bottom:1px dashed var(--rule);padding:10px 0 10px 16px}
+  .seg span{position:static;max-width:none}
+  .seg.now::after{left:-5px;right:auto;top:16px;transform:none}
+}
+
+section{padding:96px 0 0}
+section > .head{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:baseline;border-top:1px solid var(--rule);padding-top:20px;margin-bottom:48px}
+section h2{font-size:15px;font-weight:600;margin:0}
+section .head p{margin:0;color:var(--muted);max-width:60ch}
+@media (max-width:760px){section > .head{grid-template-columns:1fr;gap:8px}}
+
+/* featured */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:40px 0;border-bottom:1px solid var(--rule)}
+.case:last-child{border-bottom:0}
+.case .plate{background:var(--surface);border:1px solid var(--rule);aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted)}
+.case .plate svg{width:78%;height:auto}
+.case .plate .ac{stroke:var(--accent)}
+.case .plate .fill{fill:var(--accent-soft)}
+.case h3{font-size:clamp(24px,2.6vw,30px);font-weight:400;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em}
+.case .ctx{color:var(--muted);font-size:15px;margin:0 0 20px}
+.case p{margin:0 0 16px;max-width:52ch}
+.outcomes{display:flex;flex-wrap:wrap;gap:28px;margin:24px 0}
+.outcomes div{min-width:120px}
+.outcomes b{display:block;font:500 26px var(--mono);color:var(--accent);letter-spacing:-.02em}
+.outcomes small{font-size:14px;color:var(--muted)}
+.btn{display:inline-block;border:1px solid var(--ink);padding:9px 16px;border-radius:999px;text-decoration:none;font-size:15px}
+.btn:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:860px){.case{grid-template-columns:1fr;gap:28px}.case:nth-child(even) .plate{order:0}}
+@media (min-width:861px){.case:nth-child(even) .plate{order:2}}
+
+/* portfolio list */
+.index{list-style:none;margin:0;padding:0}
+.index li{display:grid;grid-template-columns:240px 1fr 140px;gap:32px;padding:20px 0;border-bottom:1px solid var(--rule)}
+.index li:first-child{border-top:1px solid var(--rule)}
+.index .t{font-weight:500}
+.index .d{color:var(--muted)}
+.index .k{font:400 13px var(--mono);color:var(--muted);text-align:right}
+.after{margin-top:28px}
+@media (max-width:760px){.index li{grid-template-columns:1fr;gap:4px}.index .k{text-align:left}}
+
+/* experience timeline */
+.roles{list-style:none;margin:0;padding:0}
+.roles li{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.roles .yr{font:400 14px var(--mono);color:var(--muted);padding-top:3px}
+.roles h3{font-size:18px;font-weight:500;margin:0}
+.roles .org{color:var(--muted);margin:2px 0 8px}
+.roles p{margin:0;max-width:62ch}
+@media (max-width:760px){.roles li{grid-template-columns:1fr;gap:6px}}
+
+/* practice */
+.practice{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.practice h3{font-size:18px;font-weight:500;margin:0 0 10px}
+.practice p{margin:0;color:var(--muted)}
+@media (max-width:860px){.practice{grid-template-columns:1fr;gap:28px}}
+
+/* credentials */
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.creds h3{font-size:15px;font-weight:600;margin:0 0 14px}
+.creds ul{list-style:none;margin:0;padding:0}
+.creds li{padding:10px 0;border-bottom:1px solid var(--rule)}
+.creds li span{display:block;color:var(--muted);font-size:15px}
+@media (max-width:760px){.creds{grid-template-columns:1fr}}
+
+/* contact */
+.contact{padding:120px 0 64px}
+.contact h2{font-size:clamp(30px,4.4vw,50px);font-weight:300;letter-spacing:-.02em;line-height:1.1;margin:0 0 28px;max-width:20ch}
+.contact .links{display:flex;flex-wrap:wrap;gap:16px 32px;font-size:18px}
+.contact .where{margin:24px 0 0;color:var(--muted);font-size:16px}
+footer{border-top:1px solid var(--rule);padding:24px 0 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* featured previews */
+.case .plate.img{display:block;padding:0;overflow:hidden;background:#fff;text-decoration:none}
+.case .plate.img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.case .plate.img:hover img{transform:scale(1.03)}
+.case h3 a{text-decoration:none}
+.case h3 a:hover{color:var(--accent)}
+.soon{font-size:14px;color:var(--muted);margin:0}
+
+/* case study view */
+.study{padding:24px 0 0}
+.back{display:inline-flex;gap:8px;align-items:center;font-size:15px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+.study h1{font-weight:300;font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-.02em;margin:40px 0 0;max-width:20ch}
+.study h1:focus{outline:none}
+.study .lede{max-width:60ch;color:var(--muted);font-size:19px;margin:24px 0 0}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:56px 0 0;padding:20px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.facts dt{font-size:13px;color:var(--muted);margin-bottom:4px}
+.facts dd{margin:0;font-size:15px}
+@media (max-width:760px){.facts{grid-template-columns:1fr 1fr}}
+.hero-shot{margin:40px 0 0}
+.chapter{display:grid;grid-template-columns:240px 1fr;gap:32px;border-top:1px solid var(--rule);padding-top:20px;margin-top:88px}
+.chapter > h2{font-size:15px;font-weight:600;margin:0}
+.chapter .body > p{margin:0 0 16px;max-width:62ch}
+.chapter .body > p.big{font-size:22px;line-height:1.45;font-weight:300;max-width:40ch}
+.chapter ul.plain{margin:0 0 16px;padding-left:18px;max-width:60ch}
+.chapter ul.plain li{margin-bottom:6px}
+@media (max-width:760px){.chapter{grid-template-columns:1fr;gap:12px;margin-top:64px}}
+.shot{margin:28px 0 0}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:62ch}
+.zoom{display:block;width:100%;padding:0;border:1px solid var(--rule);background:#fff;cursor:zoom-in;line-height:0}
+.zoom img{width:100%;height:auto;display:block}
+.zoom:hover{border-color:var(--muted)}
+.g2,.g3,.g4{display:grid;gap:20px;margin-top:28px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2 .shot,.g3 .shot,.g4 .shot{margin:0}
+@media (max-width:760px){.g2,.g3{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}}
+.stats{display:flex;flex-wrap:wrap;gap:28px 48px;margin:8px 0 24px}
+.stats b{display:block;font:500 32px var(--mono);color:var(--accent);letter-spacing:-.02em}
+.stats small{font-size:14px;color:var(--muted);display:block;max-width:22ch}
+.quote{border-left:2px solid var(--accent);padding:4px 0 4px 20px;margin:24px 0;max-width:56ch;color:var(--ink)}
+.quote cite{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:8px}
+.next{margin-top:96px;padding:28px 0;border-top:1px solid var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.next a{font-size:clamp(20px,2.4vw,26px);font-weight:300;text-decoration:none}
+.next a:hover{color:var(--accent)}
+.next span{font-size:14px;color:var(--muted)}
+
+@media (max-width:520px){
+  .wrap{padding:0 18px}
+  header.top{padding:20px 0}
+  header.top .name{white-space:nowrap}
+  header.top nav{gap:14px;font-size:14px}
+  header.top nav a[href="#experience"]{display:none}
+}
+/* expertise */
+.expertise{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.expertise h3{font-size:16px;font-weight:500;margin:0 0 8px}
+.expertise p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:860px){.expertise{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.expertise{grid-template-columns:1fr}}
+/* portrait */
+.intro{display:grid;grid-template-columns:1fr 240px;gap:56px;align-items:end}
+.intro > div{order:1}
+.portrait{order:2;margin:0;border:1px solid var(--rule);padding:8px;background:var(--surface)}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+@media (max-width:760px){
+  .intro{grid-template-columns:1fr;gap:28px}
+  .portrait{order:0;width:132px}
+}
+/* lightbox */
+dialog#lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog#lb::backdrop{background:rgba(10,14,13,.88)}
+dialog#lb img{max-width:96vw;max-height:86vh;display:block;background:#fff}
+dialog#lb p{color:#dfe5e3;font-size:14px;margin:10px 0 0;max-width:80ch}
+dialog#lb button{position:fixed;top:16px;right:16px;background:#fff;color:#18211E;border:0;border-radius:999px;padding:8px 14px;font:500 14px var(--sans);cursor:pointer}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+  <a class="name" href="#">Aditya Mudaliar</a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Dark</button>
+  </nav>
+</header>
+
+<main id="main">
+<div id="home">
+<div class="hero">
+  <div class="intro">
+  <figure class="portrait"><img src="img/aditya.jpg" alt="Portrait of Aditya Mudaliar" width="499" height="624"></figure>
+  <div>
+  <h1>I design products people can use, and teams that keep designing them well.</h1>
+  <p class="lede">I’m a design leader, mentor and design consultant based in Mumbai, with 20+ years across brand, UX and product design. I help companies build B2B, B2C, B2B2C, SaaS and learning products that people find easy to use, and I grow the design teams and leaders who keep them that way.</p>
+  <p class="lede">My work covers digital product design, UX research and usability, brand and product strategy, graphics, motion, animation and post-production. Along the way I’ve been a creative head, led creative and multimedia teams, run R&amp;D on interactive AI, AR and VR apps and games, headed graphics and motion for five TV channels, and led design for enterprise platforms at the Aditya Birla Group. I work through design thinking, agile and data, so every decision ties back to adoption and business results.</p>
+  </div>
+  </div>
+
+  <figure class="measure" aria-label="Career span from 1999 to today">
+    <div class="ends"><span>1999</span><span>Today</span></div>
+    <div class="track">
+      <div class="seg" style="--y:5.5"><span>Brand &amp; creative</span></div>
+      <div class="seg" style="--y:5.5"><span>Multimedia &amp; web</span></div>
+      <div class="seg" style="--y:4"><span>AR, VR &amp; gesture apps</span></div>
+      <div class="seg" style="--y:2"><span>Broadcast motion</span></div>
+      <div class="seg" style="--y:5.3"><span>Enterprise UX</span></div>
+      <div class="seg now" style="--y:3"><span>Consulting</span></div>
+    </div>
+    <figcaption>Each step added a layer. The constant has been making complex things clear to the people who use them.</figcaption>
+  </figure>
+</div>
+
+<section id="work" aria-labelledby="work-h">
+  <div class="head"><h2 id="work-h">Selected work</h2><p>Two case studies that show how I work from first question to shipped product.</p></div>
+
+  <article class="case">
+    <a class="plate img" href="#cs-b2b2c" tabindex="-1" aria-hidden="true"><img src="img/b2b-cover.jpg" alt="" loading="lazy" style="object-position:left center"></a>
+    <div>
+      <h3><a href="#cs-b2b2c">B2B2C native &amp; web products</a></h3>
+      <p class="ctx">Utec by UltraTech, Aditya Birla Group. Android, iOS and web</p>
+      <p>A home-building companion for individual house builders across rural and small-town India, and a business channel for the architects, engineers and contractors who serve them. Four apps and a web app, more than 1,000 screens, built on research with 100 families mid-construction.</p>
+      <div class="outcomes">
+        <div><b>100</b><small>house builders interviewed</small></div>
+        <div><b>80%</b><small>System Usability Scale score</small></div>
+        <div><b>1000+</b><small>screens designed</small></div>
+      </div>
+      <a class="btn" href="#cs-b2b2c">Read the case study</a>
+    </div>
+  </article>
+
+  <article class="case">
+    <a class="plate img" href="#cs-workshops" tabindex="-1" aria-hidden="true"><img src="img/ws-05.jpg" alt="" loading="lazy"></a>
+    <div>
+      <h3><a href="#cs-workshops">Workshops, research &amp; user testing</a></h3>
+      <p class="ctx">Utec by UltraTech, Aditya Birla Group. Workshops, concept testing and analytics</p>
+      <p>Paper prototypes, sticky-note journeys, illustrated concept cards and product analytics. The methods I used to decide what to build for house builders, and later to make the case for putting search at the centre of the app.</p>
+      <div class="outcomes">
+        <div><b>79%</b><small>of users relied on internal search</small></div>
+        <div><b>7</b><small>concept cards tested in the field</small></div>
+        <div><b>10+</b><small>cross-functional workshops</small></div>
+      </div>
+      <a class="btn" href="#cs-workshops">Read the case study</a>
+    </div>
+  </article>
+
+</section>
+
+<section id="portfolio" aria-labelledby="pf-h">
+  <div class="head"><h2 id="pf-h">Portfolio</h2><p>More work across motion, broadcast, interactive installations and web.</p></div>
+  <ul class="index">
+    <li><span class="t">SpotboyE website &amp; app</span><span class="d">UI/UX for a Bollywood news website and mobile app, with high-fidelity wireframes for a fast-moving stream of news, video and galleries.</span><span class="k">Web · Mobile</span></li>
+    <li><span class="t">SpotboyE mascot</span><span class="d">Brand mascot and a fully working 3D rig. The animated character lifted engagement by 40%.</span><span class="k">3D · Brand</span></li>
+    <li><span class="t">Group Data &amp; Analytics website</span><span class="d">SharePoint-based brand site for Aditya Birla Group, with built-in analytics. Engagement up 45%, content discovery up 35%.</span><span class="k">Web · Enterprise</span></li>
+    <li><span class="t">9X Media channel packaging</span><span class="d">Show packaging, promos and digital graphics for 9X Jalwa, 9XO, 9XM and more, across five channels.</span><span class="k">Motion · Broadcast</span></li>
+    <li><span class="t">Projection mapping &amp; interactive walls</span><span class="d">Immersive installations and gaming experiences that raised client acquisition by 30%.</span><span class="k">Installation</span></li>
+    <li><span class="t">AR, VR &amp; gesture apps</span><span class="d">R&amp;D on gesture-controlled and face-recognition products, plus mobile game roadmaps.</span><span class="k">Emerging tech</span></li>
+    <li><span class="t">Steinmetz Diamonds website</span><span class="d">Corporate website that won Gold for Best Corporate Website at ABCI 2010.</span><span class="k">Web · Award</span></li>
+  </ul>
+  <p class="after"><a class="btn" href="https://www.behance.net/adityavm" target="_blank" rel="noopener">View complete portfolio on Behance ↗</a></p>
+</section>
+
+<section id="experience" aria-labelledby="ex-h">
+  <div class="head"><h2 id="ex-h">Experience</h2><p>Most recent first.</p></div>
+  <ol class="roles">
+    <li><span class="yr">2023 – now</span><div><h3>Founder</h3><p class="org"><a href="https://myadvise.info" target="_blank" rel="noopener">myadvise.info</a></p><p>An online community for people navigating life’s transitions in relationships, careers, education and mental health, where members seek and offer advice, share experiences and talk through what’s on their minds. It offers public, private and secret conversations, prompts, livestreams and a weekly calendar, plus free spaces for qualified advisors and mentors to support members.</p></div></li>
+    <li><span class="yr">2023 – now</span><div><h3>Design Consultant</h3><p class="org">Independent, Mumbai</p><p>Leading product design for B2B, B2C, B2B2C, SaaS and learning platforms. Helped client teams adopt agile and design thinking, raising productivity by 25% and cutting cycle times by 20%. I also lead motion graphics, animation and brand strategy across broadcast, advertising, marcom and IT.</p></div></li>
+    <li><span class="yr">2018 – 2023</span><div><h3>Head of Design</h3><p class="org">Aditya Birla Management Corporation</p><p>UI/UX architecture, usability and design strategy for enterprise platforms. Mentored a 12-person team through digital transformation projects and delivered six weeks ahead of schedule. Facilitated 10+ design thinking workshops that made project approvals 25% faster.</p></div></li>
+    <li><span class="yr">2015 – 2017</span><div><h3>Head of GFX, Motion Graphics, Animation &amp; UX</h3><p class="org">9X Media</p><p>Creative direction across five TV channels, lifting audience engagement by 20%. Designed the SpotboyE mascot and its 3D rig, and wireframed the SpotboyE app and website.</p></div></li>
+    <li><span class="yr">2010 – 2014</span><div><h3>Head of Interactive HCI Apps, Mobile Gaming &amp; Apps</h3><p class="org">Activ Eight Dimensions</p><p>R&amp;D on AI, VR and AR applications, including gesture-controlled and face recognition products. Projection mapping and immersive gaming work raised client acquisition by 30%.</p></div></li>
+    <li><span class="yr">2005 – 2010</span><div><h3>Head of Creative &amp; Multimedia</h3><p class="org">Interactive Multimedia Technologies</p></div></li>
+    <li><span class="yr">1999 – 2005</span><div><h3>Creative Head</h3><p class="org">Sunshine Communication</p></div></li>
+  </ol>
+</section>
+
+<section id="practice" aria-labelledby="pr-h">
+  <div class="head"><h2 id="pr-h">How I lead</h2><p>Good products come from teams that can keep making good decisions.</p></div>
+  <div class="practice">
+    <div><h3>Grow leaders, not just output</h3><p>Built and scaled a 12-member team that delivered 40% faster, helped four mid-level designers step into leadership roles, and set up peer mentoring so standards outlast any one person.</p></div>
+    <div><h3>Align early, stay visible</h3><p>I bring stakeholders in at the start, agree on goals and success measures, and keep everyone close through regular reviews and check-ins. Ten-plus workshops raised business alignment by 30%.</p></div>
+    <div><h3>Let evidence decide</h3><p>Research, usability testing and analytics guide the calls, so design decisions connect directly to adoption and business results.</p></div>
+  </div>
+</section>
+
+<section id="expertise" aria-labelledby="xp-h">
+  <div class="head"><h2 id="xp-h">Expertise</h2><p>Where I spend most of my time.</p></div>
+  <div class="expertise">
+    <div><h3>Product design</h3><p>User-centred design, UX research and analysis, wireframing, prototyping, usability testing</p></div>
+    <div><h3>Ways of working</h3><p>Design thinking, agile sprints and workshops, data-driven design and analytics</p></div>
+    <div><h3>Leadership</h3><p>Team building, mentoring, stakeholder management, change management, business alignment</p></div>
+    <div><h3>Media &amp; emerging tech</h3><p>Brand strategy, motion graphics, animation, post-production, AI, VR and AR</p></div>
+  </div>
+</section>
+
+<section id="credentials" aria-labelledby="cr-h">
+  <div class="head"><h2 id="cr-h">Credentials</h2><p>Education, certifications and recognition.</p></div>
+  <div class="creds">
+    <div>
+      <h3>Education &amp; certification</h3>
+      <ul>
+        <li>Certified Usability Analyst<span>Human Factors International</span></li>
+        <li>Diploma in Web Design &amp; Multimedia<span>Edit Institute, Mumbai</span></li>
+        <li>BBA<span>Associate of Engineering and Management Studies</span></li>
+        <li>Fundamentals of Digital Marketing<span>Google</span></li>
+        <li>LinkedIn Learning<span>UX Design Planning: Implementation Planning · Evil by Design: Persuasion in UX · Design Thinking: Customer Experience · Design Powered by Data: UX Web Analytics · UX Deep Dive: Remote Research · Scrum: The Basics · Building Online Communities</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Recognition</h3>
+      <ul>
+        <li>Judge, AR/VR Computer Vision &amp; Applications<span>Ulectro 2026, NMIMS MPSTME</span></li>
+        <li>Gold, Best Corporate Website<span>Steinmetz Diamonds, ABCI 2010</span></li>
+        <li>Guest speaker<span>Digital Customer Experience Summit 2020</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="ct-h">
+  <h2 id="ct-h">Have a product that needs to make more sense? Let’s talk.</h2>
+  <div class="links">
+    <a href="mailto:addssiem@hotmail.com">addssiem@hotmail.com</a>
+    <a href="tel:+919833157841">+91 98331 57841</a>
+    <a href="https://www.linkedin.com/in/adityamudaliar" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/adityavm" target="_blank" rel="noopener">Behance</a>
+  </div>
+  <p class="where">Andheri East, Mumbai, India</p>
+</section>
+</div>
+
+<article class="study" id="cs-b2b2c" hidden aria-labelledby="cs-b2b2c-h">
+  <a class="back" href="#work">← Back to selected work</a>
+  <h1 id="cs-b2b2c-h" tabindex="-1">B2B2C native &amp; web products</h1>
+  <p class="lede">Utec by UltraTech is a home-building companion for people building their own house in India, and a business channel for the architects, engineers and contractors who help them. This is how we designed it, from the first field visit to tested prototypes.</p>
+  <dl class="facts">
+    <div><dt>Client</dt><dd>UltraTech Cement, Aditya Birla Group</dd></div>
+    <div><dt>Products</dt><dd>Android and iOS apps for house builders and for partners, plus a responsive web app</dd></div>
+    <div><dt>Scale</dt><dd>More than 1,000 screens</dd></div>
+    <div><dt>My role</dt><dd>Led UX: research, workshops, information architecture, flows and usability testing</dd></div>
+  </dl>
+
+  <section class="chapter" aria-labelledby="b-1"><h2 id="b-1">The problem</h2><div class="body">
+    <p class="big">Building a house takes months. Nobody stays with the owner from the first plan to moving in.</p>
+    <p>An individual house builder has to find land, get approvals, raise a loan, hire contractors, buy materials and supervise labour, mostly on word of mouth. Every stage brings new people to trust and new ways to lose money. UltraTech asked a simple question: could it become the one trusted partner across that whole journey?</p>
+    <p>Most of these builders live in rural areas and Tier 2 to Tier 4 towns. Many use an Android phone on mobile data, mainly for WhatsApp, Facebook and banking, and type in their own regional script. The product had to work for them first.</p>
+    <p>The project covered house builders and partners. This case study follows the house builder side.</p>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-2"><h2 id="b-2">Goals</h2><div class="body">
+    <ul class="plain">
+      <li>Guide house builders from end to end, so they don’t have to piece the journey together alone.</li>
+      <li>Give them enough knowledge to make their own decisions, instead of depending on middlemen.</li>
+      <li>Make the experience good enough that people want to come back to it.</li>
+      <li>For UltraTech: lifelong brand association, higher recall, and new routes to cross-sell, wallet share and market share.</li>
+    </ul>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-3"><h2 id="b-3">Approach</h2><div class="body">
+    <p>We followed the double diamond. First we went wide in research and narrowed down to insights and “how might we” questions. Then we went wide again in ideation, and built, tested and iterated before anything reached development.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Double diamond process diagram"><img src="img/b2b-05.jpg" alt="Double diamond process diagram" loading="lazy"></button><figcaption>The double diamond, from a brief we didn’t fully understand to a solution we could defend.</figcaption></figure>
+    <p style="margin-top:28px">Before going into the field, we sketched a hypothetical journey with five phases: need, planning, construction, interiors and moving in. It gave the research a structure: where are the triggers, the pain points and the moments of truth?</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Hypothetical house building journey across five phases"><img src="img/b2b-06.jpg" alt="Hypothetical house building journey across five phases" loading="lazy"></button></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-4"><h2 id="b-4">Research across India</h2><div class="body">
+    <div class="stats">
+      <div><b>100</b><small>house builders at different stages of construction</small></div>
+      <div><b>11</b><small>regions, from Ludhiana to Thirumangalam</small></div>
+      <div><b>27–55+</b><small>age range of men and women we met</small></div>
+    </div>
+    <p>We met first-time and repeat builders, nuclear and joint families, and people who hand everything to a contractor as well as people who manage every labourer themselves. We spoke to the main decision maker and to the family members who shape each decision: spouses, fathers, sons and brothers.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Map of research locations across India with participant mix"><img src="img/b2b-07.jpg" alt="Map of research locations across India with participant mix" loading="lazy"></button></figure>
+    <p style="margin-top:28px">Each visit became a profile. Ramana Reddy, a 42-year-old shop owner in rural Telangana, starts work at 5am, seven days a week. He owns a city plot he bought long ago and wants to build there before he retires. He uses his phone only when he’s free, on mobile data, in his own language. Designing for him meant designing for limited time, moderate confidence with technology and a strong preference for his own language.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: User profile of a house builder family from Telangana"><img src="img/b2b-08.jpg" alt="User profile of a house builder family from Telangana" loading="lazy"></button></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-5"><h2 id="b-5">Making sense of it</h2><div class="body">
+    <p>In design thinking workshops with stakeholders, we turned field notes into frameworks. A Jobs To Be Done canvas showed what people were really trying to do. The practical jobs were to stay on budget and on time, get approvals and find an architect they could trust. The internal jobs were to feel in control and get through it with less stress. Deeper still, they wanted to provide for their family and build a legal house without being cheated on materials.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Jobs To Be Done canvas with gains, pains and jobs"><img src="img/b2b-09.jpg" alt="Jobs To Be Done canvas with gains, pains and jobs" loading="lazy"></button><figcaption>Gains, pains and the external, internal and philosophical jobs of a house builder.</figcaption></figure>
+    <p style="margin-top:28px">We then mapped products and services against those jobs. Gain creators included proactive estimates, help visualising the design and help with finance and approvals. Pain relievers included advice at every step, certified contacts rated by other builders, and tools to track cost and time.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Value proposition map with gain creators and pain relievers"><img src="img/b2b-10.jpg" alt="Value proposition map with gain creators and pain relievers" loading="lazy"></button></figure>
+    <p style="margin-top:28px">The journey map brought it together. For the planning, construction and interior phases, it lists tasks, feelings, thoughts and opportunities. Feelings moved from confused to cautious to quietly happy. The opportunities row became the product backlog: a land rate predictor, approval guidelines, expense and milestone trackers, 3D and VR previews, and a directory of certified contractors.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: User journey map with tasks, feelings, thoughts and opportunities"><img src="img/b2b-11.jpg" alt="User journey map with tasks, feelings, thoughts and opportunities" loading="lazy"></button></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-6"><h2 id="b-6">Sketching solutions</h2><div class="body">
+    <p>We sketched quickly in the workshops, one idea per sheet, so the team could react to ideas instead of arguing in the abstract.</p>
+    <div class="g2">
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Sketch: plot size calculator"><img src="img/b2b-12.jpg" alt="Sketch: plot size calculator" loading="lazy"></button><figcaption><b>Plot size calculator.</b> A few questions about family size, rooms and state suggest a plot size and show what nearby plots cost.</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Sketch: plot search on a map"><img src="img/b2b-13.jpg" alt="Sketch: plot search on a map" loading="lazy"></button><figcaption><b>Plot search.</b> Map first and layered: location and connectivity at a glance, then popularity and price, then a prompt to plan a visit.</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Sketch: plan my home"><img src="img/b2b-14.jpg" alt="Sketch: plan my home" loading="lazy"></button><figcaption><b>Plan my home.</b> Drag and drop who sleeps where. Registered architects respond with sample layouts.</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Sketch: time estimator timeline"><img src="img/b2b-15.jpg" alt="Sketch: time estimator timeline" loading="lazy"></button><figcaption><b>Time estimator.</b> A timeline of milestones, documents and invoices that warns you before problems arrive, not after.</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Sketch: expense tracker"><img src="img/b2b-16.jpg" alt="Sketch: expense tracker" loading="lazy"></button><figcaption><b>Expense tracker.</b> Replaces the notebook and the spreadsheet. Snap a bill or type it in, sorted by material.</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-7"><h2 id="b-7">Structure</h2><div class="body">
+    <p>The information architecture grouped more than a dozen areas, from onboarding, search and notifications to financial help, permissions and learning, so each could grow without crowding the home screen.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Information architecture diagram"><img src="img/b2b-17.jpg" alt="Information architecture diagram" loading="lazy"></button></figure>
+    <p style="margin-top:28px">Before drawing screens, we mapped task flows for the riskiest journeys: visualisation, onboarding, the estimator and the project tracker.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Task flows for visualisation, onboarding, estimator and project tracker"><img src="img/b2b-18.jpg" alt="Task flows for visualisation, onboarding, estimator and project tracker" loading="lazy"></button></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-8"><h2 id="b-8">Wireframes</h2><div class="body">
+    <p><b>Onboarding</b> asks about the house, but people can skip it with “Do it later” and come back through a persistent card. A checklist of what they’ve already done replaces a long questionnaire and shapes the home feed. The menu sits at the bottom right, within reach of a thumb.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Low-fidelity onboarding wireframes"><img src="img/b2b-19.jpg" alt="Low-fidelity onboarding wireframes" loading="lazy"></button></figure>
+    <p style="margin-top:28px"><b>Expert and material search</b> lists architects, engineers and contractors on a map and as cards, with filters for distance, opening hours and ratings, and profiles that show real projects.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Low-fidelity wireframes for expert and material search"><img src="img/b2b-20.jpg" alt="Low-fidelity wireframes for expert and material search" loading="lazy"></button></figure>
+    <p style="margin-top:28px"><b>The cost and time estimator</b> gives a quick standard estimate, or a detailed one when you upload a 2D layout. It also points you to the nearest UltraTech Building Solutions (UBS) store.</p>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Low-fidelity wireframes for the cost and time estimator"><img src="img/b2b-21.jpg" alt="Low-fidelity wireframes for the cost and time estimator" loading="lazy"></button></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-9"><h2 id="b-9">Testing</h2><div class="body">
+    <p>We tested clickable prototypes with house builders, watching what they did as well as listening to what they said.</p>
+    <ul class="plain">
+      <li><b>Behaviour:</b> task success rate, time on task, and whether people searched or navigated.</li>
+      <li><b>Attitude:</b> System Usability Scale, think-aloud sessions and expectancy tests.</li>
+      <li><b>What we watched for:</b> whether icons were discoverable, whether labels made sense, whether real routes matched the designed ones, whether every action could be undone, and whether feedback was clear at every step.</li>
+    </ul>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Usability testing methodology"><img src="img/b2b-22.jpg" alt="Usability testing methodology" loading="lazy"></button></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="b-10"><h2 id="b-10">Outcome</h2><div class="body">
+    <div class="stats"><div><b>80%</b><small>System Usability Scale score</small></div><div><b>4 + 1</b><small>native apps and a responsive web app launched</small></div></div>
+    <p>The product launched on Android, on iOS and as a progressive web app. A few principles held throughout and are why it worked for its audience:</p>
+    <ul class="plain">
+      <li>Lead with visuals: text paired with familiar symbols, real photos and illustrations.</li>
+      <li>Multilingual and hyperlocal, and in line with WCAG.</li>
+      <li>Fewer clicks, and one goal at a time.</li>
+      <li>Personalised, conversational guidance that helps people make informed decisions.</li>
+      <li>The same patterns on app and web, so learning one teaches the other.</li>
+      <li>3D modelling and VR previews built into the journey, not bolted on.</li>
+      <li>Hooks that build a habit, so people come back between milestones.</li>
+    </ul>
+  </div></section>
+
+  <nav class="next" aria-label="Next case study"><span>Next case study</span><a href="#cs-workshops">Workshops, research &amp; user testing →</a></nav>
+</article>
+
+<article class="study" id="cs-workshops" hidden aria-labelledby="cs-workshops-h">
+  <a class="back" href="#work">← Back to selected work</a>
+  <h1 id="cs-workshops-h" tabindex="-1">Workshops, research &amp; user testing</h1>
+  <p class="lede">For Utec, we tested ideas with paper, sticky notes and illustrated cards before writing code, and with analytics after launch. This is the toolkit, and what each method changed in the product.</p>
+  <dl class="facts">
+    <div><dt>Client</dt><dd>UltraTech Cement, Aditya Birla Group</dd></div>
+    <div><dt>Methods</dt><dd>Design thinking workshops, paper prototyping, affinity mapping</dd></div>
+    <div><dt>Research</dt><dd>Concept testing with cue cards, analytics review</dd></div>
+    <div><dt>Shaped</dt><dd>Onboarding, home screen and search strategy</dd></div>
+  </dl>
+  <figure class="hero-shot shot"><button class="zoom" type="button" aria-label="Enlarge: affinity map from a workshop"><img src="img/ws-05.jpg" alt="Affinity map with sticky notes from a workshop" loading="lazy"></button></figure>
+
+  <section class="chapter" aria-labelledby="w-1"><h2 id="w-1">Paper first</h2><div class="body">
+    <p>In workshops, teams sketched screens on paper and walked through them together. Three ideas kept coming back: detect the plot location first, ask what stage the builder is at (I have a plot, I need a plan, I need a contractor, I need materials), and keep a “Call us” option on every screen for people who would rather talk.</p>
+    <p>Paper is cheap enough to throw away and real enough to argue about. That is exactly what you want at this stage.</p>
+    <div class="g3">
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Paper prototype: location and house building journey"><img src="img/ws-01.jpg" alt="Paper prototype: location and house building journey" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Paper prototype: what stage are you in"><img src="img/ws-02.jpg" alt="Paper prototype: what stage are you in" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Paper prototype: plot location details and checklist"><img src="img/ws-03.jpg" alt="Paper prototype: plot location details and checklist" loading="lazy"></button></figure>
+    </div>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="w-2"><h2 id="w-2">Mapping the journey</h2><div class="body">
+    <p>We laid the whole journey out on large sheets, stage by stage: identifying a need, setting requirements, recruiting stakeholders, building and tracking progress, finishing, and life after finishing. For each stage the group added sticky notes on pains, gains, feelings and expectations.</p>
+    <p>Some notes were practical: budget overruns, time management, quality of materials. Others were emotional. Before building, people feared being cheated by contractors. Afterwards they felt pride, wanted to give house tours and dreaded criticism. Both kinds shaped what we built.</p>
+    <div class="g2">
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Affinity map close-up with pains and gains"><img src="img/ws-04.jpg" alt="Affinity map close-up with pains and gains" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Post-finishing stage notes: social, maintenance, feelings and pains"><img src="img/ws-06.jpg" alt="Post-finishing stage notes: social, maintenance, feelings and pains" loading="lazy"></button></figure>
+    </div>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="w-3"><h2 id="w-3">Designing onboarding</h2><div class="body">
+    <p>The workshop decisions became flows. Each one removes a reason to give up:</p>
+    <ul class="plain">
+      <li>Pick a language before anything else. English is selected by default, with Indian languages one tap away.</li>
+      <li>The phone number is the unique ID, auto-detected where possible and verified by OTP. Email and social logins are alternatives.</li>
+      <li>A countdown timer on the OTP screen stops people requesting several codes at once.</li>
+      <li>Only a name (for personalisation) and an email (for recovery) are asked up front.</li>
+      <li>House details are optional. A checklist of activities already done replaces a long Q&amp;A and curates the home feed.</li>
+    </ul>
+    <div class="g2">
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: On launch: splash, language selection, log in"><img src="img/ws-07.jpg" alt="On launch: splash, language selection, log in" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Log in using phone number with OTP"><img src="img/ws-08.jpg" alt="Log in using phone number with OTP" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Log in using email address"><img src="img/ws-09.jpg" alt="Log in using email address" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Create new account"><img src="img/ws-10.jpg" alt="Create new account" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: New account using phone number"><img src="img/ws-11.jpg" alt="New account using phone number" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: House builder onboarding: house, plot, residence and activities"><img src="img/ws-12.jpg" alt="House builder onboarding: house, plot, residence and activities" loading="lazy"></button></figure>
+    </div>
+    <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Home feed curated from onboarding and the bottom-right menu"><img src="img/ws-13.jpg" alt="Home feed curated from onboarding and the bottom-right menu" loading="lazy"></button><figcaption>The feed reflects the onboarding checklist. The menu sits at the bottom right for one-handed use.</figcaption></figure>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="w-4"><h2 id="w-4">Search vs navigation</h2><div class="body">
+    <p class="big">After launch, the analytics made a clear case.</p>
+    <p>Out of 50 modules in the house builder app, three were used far more than the rest:</p>
+    <div class="stats">
+      <div><b>80.3%</b><small>used Support</small></div>
+      <div><b>79.9%</b><small>used the Progress Tracker</small></div>
+      <div><b>79%</b><small>used Internal Search</small></div>
+    </div>
+    <p>Six of the app’s fourteen solutions (42.85%) were search-based: find experts, find materials, the plans gallery, the styles gallery, quick reads and videos. The wider evidence pointed the same way:</p>
+    <blockquote class="quote">59% of web visitors frequently use a site’s internal search, 15% prefer it to the menu, and more than half of people landing on a start page go straight to the search box.<cite>Source: Nielsen Group and other behavioural research, as cited in the presentation</cite></blockquote>
+    <p>Building a house starts with planning, and planning leads people to search for what the market offers. So I recommended putting tab-based search, covering experts, materials, plans, styles, quick reads and videos, at the top of the home screen.</p>
+    <p>Search is also an internal trigger, the start of a hook loop. Once looking things up in Utec becomes a habit, people start using its other features and putting in their time, data and effort. That raises customer lifetime value.</p>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="w-5"><h2 id="w-5">Home screen options</h2><div class="body">
+    <p>We explored four directions for the home screen, all built around the same order: identify your stage, browse the design library, turn a sketch into a 2D plan and a 2D plan into 3D, try VR in a UBS store, then budgeting tools and articles. The variations tested colour, density and how strongly each block should call for attention.</p>
+    <div class="g4">
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Home screen option 1, purple"><img src="img/ws-24.jpg" alt="Home screen option 1, purple" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Home screen option 2, coral"><img src="img/ws-25.jpg" alt="Home screen option 2, coral" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Home screen option 3, compact purple and yellow"><img src="img/ws-26.jpg" alt="Home screen option 3, compact purple and yellow" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Home screen option 4, orange"><img src="img/ws-27.jpg" alt="Home screen option 4, orange" loading="lazy"></button></figure>
+    </div>
+  </div></section>
+
+  <section class="chapter" aria-labelledby="w-6"><h2 id="w-6">Concept cue cards</h2><div class="body">
+    <p>For formative research, we drew each problem as a scene instead of showing screens. Every card shows a familiar moment of doubt in the builder’s own words: “Will it fit my budget?”, “I wish I had hired a reliable contractor!”, “Will I get a home loan?”</p>
+    <p>Participants reacted to the problem rather than to our interface, which told us which concepts mattered before we spent effort designing them.</p>
+    <div class="g3">
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Community"><img src="img/ws-29.jpg" alt="Concept card: Community" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Land rate predictor"><img src="img/ws-30.jpg" alt="Concept card: Land rate predictor" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Ghar ka expert"><img src="img/ws-31.jpg" alt="Concept card: Ghar ka expert" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Man, machine, material"><img src="img/ws-32.jpg" alt="Concept card: Man, machine, material" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Visualisation in 3D and VR"><img src="img/ws-33.jpg" alt="Concept card: Visualisation in 3D and VR" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Approvals"><img src="img/ws-34.jpg" alt="Concept card: Approvals" loading="lazy"></button></figure>
+      <figure class="shot"><button class="zoom" type="button" aria-label="Enlarge: Concept card: Finance"><img src="img/ws-35.jpg" alt="Concept card: Finance" loading="lazy"></button></figure>
+    </div>
+  </div></section>
+
+  <nav class="next" aria-label="Next case study"><span>Next case study</span><a href="#cs-b2b2c">B2B2C native &amp; web products →</a></nav>
+</article>
+
+</main>
+<dialog id="lb" aria-label="Enlarged image"><button type="button" id="lbclose">Close</button><img alt=""><p></p></dialog>
+
+<footer><span>© 2026 Aditya Mudaliar</span><span>Andheri East, Mumbai, India</span></footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  }
+  function label(){btn.textContent=current()==='dark'?'Light':'Dark';}
+  try{var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+  label();
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+    label();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var home=document.getElementById('home'), studies=[].slice.call(document.querySelectorAll('.study'));
+  function route(){
+    var id=location.hash.slice(1), el=id&&document.getElementById(id);
+    if(el&&el.classList.contains('study')){
+      home.hidden=true; studies.forEach(function(s){s.hidden=s!==el;});
+      window.scrollTo(0,0); var h=el.querySelector('h1'); if(h) h.focus({preventScroll:true});
+      document.title=h.textContent+' · Aditya Mudaliar';
+    }else{
+      var wasHidden=home.hidden;
+      home.hidden=false; studies.forEach(function(s){s.hidden=true;});
+      document.title='Aditya Mudaliar · Design leader & digital product designer';
+      if(el){ if(wasHidden) el.scrollIntoView(); }
+    }
+  }
+  window.addEventListener('hashchange',route); route();
+
+  var lb=document.getElementById('lb'), li=lb.querySelector('img'), lp=lb.querySelector('p');
+  document.addEventListener('click',function(e){
+    var z=e.target.closest('.zoom'); if(!z) return;
+    var img=z.querySelector('img'), cap=z.parentNode.querySelector('figcaption');
+    li.src=img.src; li.alt=img.alt; lp.textContent=cap?cap.textContent:img.alt;
+    if(lb.showModal) lb.showModal(); else window.open(img.src);
+  });
+  document.getElementById('lbclose').addEventListener('click',function(){lb.close();});
+  lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+})();
+</script>
+</body>
+</html>
